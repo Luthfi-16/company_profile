@@ -16,16 +16,15 @@
     <div id="navbar-collapse" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/')}}">Beranda</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="courses.html">Prestasi</a></li>
-        <li><a href="teachers.html">UKM</a></li>
+        <li><a href="{{ url('artikel')}}">Artikel</a></li>
+        <li><a href="{{ url('dosen')}}">Dosen</a></li>
+        <li><a href="{{ url('fakultas')}}">Fakultas</a></li>
         <li class="dropdown">
           <a href="#" data-toggle="dropdown" class="dropdown-toggle">Halaman</a>
           <ul class="dropdown-menu">
-            <li><a href="about.html">Dosen</a></li>
-            <li><a href="{{ url('fakultas')}}">Fakultas</a></li>
-            <li><a href="course-single.html">Fasilitas</a></li>
             <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="teachers.html">Prestasi</a></li>
+            <li><a href="teachers.html">UKM</a></li>
           </ul>
         </li>
       </ul>

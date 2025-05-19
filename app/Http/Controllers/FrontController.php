@@ -42,6 +42,23 @@ class FrontController extends Controller
 
     }
 
+    public function Artikel(){
+        $artikel = Artikel::all();
+        return view('artikel', compact('artikel'));
+    }
+
+    public function detailArtikel($id)
+    {
+        $artikel = Artikel::findOrFail($id);
+        return view(('artikeld'), compact('artikel'));
+
+    }
+
+    public function Dosen(){
+        $dosen = Dosen::all();
+        return view('dosen', compact('dosen'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

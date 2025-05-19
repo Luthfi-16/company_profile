@@ -26,8 +26,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [FrontController::class, 'index']);
-Route::get('/fakultas', [FrontController::class, 'fakultas']);
+Route::get('/fakultas', [FrontController::class, 'Fakultas']);
 Route::get('fakultas{id}', [FrontController::class, 'detailFakultas'])->name('detail_fakultas');
+Route::get('/artikel', [FrontController::class, 'Artikel']);
+Route::get('artikel{id}', [FrontController::class, 'detailArtikel'])->name('detail_artikel');
+Route::get('/dosen', [FrontController::class, 'Dosen']);
+
+
 
 
 

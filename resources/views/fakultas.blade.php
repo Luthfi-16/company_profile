@@ -7,6 +7,7 @@
           <h2>Fakultas</h2>
         </div>
       </div>
+</section>
       <!-- END row -->
       @foreach($fakultas as $data)
       <div class="row">
@@ -21,7 +22,7 @@
             <div class="text">
               <h3>{{ $data->nama_fakultas}} </h3>
               <p>{{ Str::limit($data->desk, 200) }}</p>
-              <p><a href="{{ route ('detail', $data->id)}}" class="btn btn-warning">Selengkapnya</a></p>
+              <p><a href="{{ route ('detail_fakultas', $data->id)}}" class="btn btn-warning">Selengkapnya</a></p>
             </div>
           </div>
       </div>

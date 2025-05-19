@@ -93,10 +93,10 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="owl-carousel" id="owl1">
-                        @foreach($artikel as $data)
+                        @foreach($artikel->take(3) as $data)
                         <div class="item">
                             <figure class="probootstrap-media"><img src="{{ asset('storage/artikel/' . $data->foto) }}" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                            <a href="#" class="probootstrap-featured-news-box">
+                            <a href="{{route ('detail_artikel', $data->id)}}" class="probootstrap-featured-news-box">
                               <div class="probootstrap-text artikel">
                                 <h3>{{ $data->judul}}</h3>
                                 <p>{{ Str::limit($data->isi, 55)}}</p>
@@ -113,7 +113,7 @@
                   <!-- END row -->
                   <div class="row">
                     <div class="col-md-12 text-center">
-                      <p><a href="#" class="btn btn-warning">Lihat Semua Artikel</a></p>  
+                      <p><a href="{{ url('artikel')}}" class="btn btn-warning">Lihat Semua Artikel</a></p>  
                     </div>
                   </div>
                 </div>
