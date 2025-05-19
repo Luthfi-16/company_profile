@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'judul', 'isi', 'foto'];
+    protected $fillable = ['id', 'judul', 'isi', 'foto', 'tanggal'];
     public $timestamp   = true;
 
     public function deleteImage()

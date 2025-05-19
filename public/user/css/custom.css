@@ -1,1 +1,116 @@
 /* Your custom css code goes here */
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    background-color: white !important;
+    color: black !important;
+    border: none !important;
+}
+
+.nav-tabs>li>a {
+    background-color: rgb(249, 187, 28) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Warna teks navbar utama (Home, Courses, dll) */
+.navbar-nav>li>a {
+    color: #000000 !important;
+    /* Oranye */
+}
+
+/* Warna teks menu aktif */
+.navbar-nav>li.active>a {
+    color: rgb(249, 187, 28) !important;
+    /* Oranye juga */
+}
+
+/* Warna teks saat hover */
+.navbar-nav>li>a:hover,
+.navbar-nav>li.open>a {
+    color: rgb(249, 187, 28) !important;
+    /* Lebih gelap saat hover */
+}
+
+/* Warna background dropdown */
+.navbar-nav>.dropdown>.dropdown-menu {
+    background-color: rgb(249, 187, 28);
+}
+
+/* Warna teks di dropdown */
+.dropdown-menu>li>a {
+    color: #fff;
+}
+
+/* Warna teks saat hover di dropdown */
+.dropdown-menu>li>a:hover {
+    background-color: rgb(249, 187, 28);
+    color: #fff;
+}
+
+/* Warna background sub menu (jika ada submenu dropdown) */
+.dropdown-submenu>.dropdown-menu {
+    background-color: rgb(249, 187, 28);
+}
+
+/* 1. Warna segitiga di atas dropdown */
+.dropdown-menu:before {
+    border-bottom-color: rgb(249, 187, 28) !important;
+    /* Ganti dari hijau ke oranye */
+}
+
+/* 2. Warna default teks dalam dropdown */
+.dropdown-menu>li>a {
+    color: #ffffff !important;
+    /* Putih */
+}
+
+/* 3. Warna teks saat hover/focus di dalam dropdown */
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    background-color: white !important;
+    color: rgb(249, 187, 28) !important;
+}
+
+/* 4. Submenu anak juga disamakan */
+.dropdown-submenu>.dropdown-menu {
+    background-color: rgb(249, 187, 28) !important;
+}
+
+.probootstrap-featured-news-box:hover .probootstrap-text {
+    background: rgb(249, 187, 28);
+}
+
+.artikel {
+    border-bottom: 4px solid rgb(249, 187, 28) !important;
+    /* Atau gunakan kode warna seperti #FFA500 */
+}
+.image-card {
+    width: 250px;
+    /* sesuaikan */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    background-color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+    /* zoom ringan saat hover */
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.image-title {
+    padding: 10px;
+    background-color: #3b3b3b;
+    color: white;
+    font-weight: bold;
+}

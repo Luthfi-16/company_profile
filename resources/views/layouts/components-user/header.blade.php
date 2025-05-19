@@ -10,35 +10,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html" title="ProBootstrap:Enlight">Enlight</a>
+      <img src="{{ asset('user/img/Logo_Binus_University.png') }}" alt="" style="width: 100px; margin-top: 10px">
     </div>
 
     <div id="navbar-collapse" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="teachers.html">Teachers</a></li>
-        <li><a href="events.html">Events</a></li>
+        <li><a href="{{ url('/')}}">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="courses.html">Prestasi</a></li>
+        <li><a href="teachers.html">UKM</a></li>
         <li class="dropdown">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Halaman</a>
           <ul class="dropdown-menu">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="course-single.html">Course Single</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li class="dropdown-submenu dropdown">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Second Level Menu</a></li>
-                <li><a href="#">Second Level Menu</a></li>
-                <li><a href="#">Second Level Menu</a></li>
-                <li><a href="#">Second Level Menu</a></li>
-              </ul>
-            </li>
-            <li><a href="news.html">News</a></li>
+            <li><a href="about.html">Dosen</a></li>
+            <li><a href="{{ url('fakultas')}}">Fakultas</a></li>
+            <li><a href="course-single.html">Fasilitas</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>

@@ -15,7 +15,7 @@ class UkmController extends Controller
     public function index()
     {
         $ukm = Ukm::all();
-        return view('ukm.index', compact('ukm'));
+        return view('admin/ukm.index', compact('ukm'));
     }
 
     /**
@@ -25,7 +25,7 @@ class UkmController extends Controller
      */
     public function create()
     {
-        return view('ukm.create');
+        return view('admin/ukm.create');
     }
 
     /**
@@ -69,7 +69,7 @@ class UkmController extends Controller
     public function show($id)
     {
         $ukm = Ukm::findOrFail($id);
-        return view('ukm.show', compact('ukm'));
+        return view('admin/ukm.show', compact('ukm'));
 
     }
 
@@ -82,7 +82,7 @@ class UkmController extends Controller
     public function edit($id)
     {
         $ukm = Ukm::findOrFail($id);
-        return view('ukm.edit', compact('ukm'));
+        return view('admin/ukm.edit', compact('ukm'));
 
     }
 

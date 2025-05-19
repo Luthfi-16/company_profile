@@ -30,9 +30,16 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function Fakultas(){
+        $fakultas = Fakultas::all();
+        return view('fakultas', compact('fakultas'));
+    }
+
+    public function detailFakultas($id)
     {
-        //
+        $fakultas = Fakultas::findOrFail($id);
+        return view(('fakultasd'), compact('fakultas'));
+
     }
 
     /**

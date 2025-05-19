@@ -15,7 +15,7 @@ class ArtikelController extends Controller
     public function index()
     {
         $artikel = Artikel::all();
-        return view('artikel.index', compact('artikel'));
+        return view('admin/artikel.index', compact('artikel'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        return view('artikel.create');
+        return view('admin/artikel.create');
     }
 
     /**
@@ -37,14 +37,16 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'judul' => 'required|unique:artikels',
-            'isi'   => 'required',
-            'foto'  => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'judul'   => 'required',
+            'isi'     => 'required',
+            'tanggal' => 'required|date',
+            'foto'    => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
-        $artikel        = new Artikel();
-        $artikel->judul = $request->judul;
-        $artikel->isi   = $request->isi;
+        $artikel          = new Artikel();
+        $artikel->judul   = $request->judul;
+        $artikel->isi     = $request->isi;
+        $artikel->tanggal = $request->tanggal;
 
         if ($request->hasFile('foto')) {
             $img  = $request->file('foto');
@@ -68,7 +70,7 @@ class ArtikelController extends Controller
     public function show($id)
     {
         $artikel = Artikel::findOrFail($id);
-        return view('artikel.show', compact('artikel'));
+        return view('admin/artikel.show', compact('artikel'));
     }
 
     /**
@@ -80,7 +82,7 @@ class ArtikelController extends Controller
     public function edit($id)
     {
         $artikel = Artikel::findOrFail($id);
-        return view('artikel.edit', compact('artikel'));
+        return view('admin/artikel.edit', compact('artikel'));
     }
 
     /**
@@ -94,14 +96,16 @@ class ArtikelController extends Controller
     {
 
         $validated = $request->validate([
-            'judul' => 'required',
-            'isi'   => 'required',
-            'foto'  => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'judul'   => 'required',
+            'isi'     => 'required',
+            'tanggal' => 'required|date',
+            'foto'    => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
-        $artikel        = Artikel::findOrFail($id);
-        $artikel->judul = $request->judul;
-        $artikel->isi   = $request->isi;
+        $artikel          = Artikel::findOrFail($id);
+        $artikel->judul   = $request->judul;
+        $artikel->isi     = $request->isi;
+        $artikel->tanggal = $request->tanggal;
 
         if ($request->hasFile('foto')) {
             $artikel->deleteImage();

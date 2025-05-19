@@ -15,7 +15,7 @@ class DosenController extends Controller
     public function index()
     {
         $dosen = Dosen::all();
-        return view('dosen.index', compact('dosen'));
+        return view('admin/dosen.index', compact('dosen'));
 
     }
 
@@ -26,7 +26,7 @@ class DosenController extends Controller
      */
     public function create()
     {
-        return view('dosen.create');
+        return view('admin/dosen.create');
     }
 
     /**
@@ -43,6 +43,7 @@ class DosenController extends Controller
             'telepon'    => 'required|numeric',
             'email'      => 'required',
             'jabatan'    => 'required',
+            'status'     => 'required',
             'foto'       => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
@@ -75,7 +76,7 @@ class DosenController extends Controller
     public function show($id)
     {
         $dosen = Dosen::findOrFail($id);
-        return view('dosen.show', compact('dosen'));
+        return view('admin/dosen.show', compact('dosen'));
     }
 
     /**
@@ -87,7 +88,7 @@ class DosenController extends Controller
     public function edit($id)
     {
         $dosen = Dosen::findOrFail($id);
-        return view('dosen.edit', compact('dosen'));
+        return view('admin/dosen.edit', compact('dosen'));
     }
 
     /**
@@ -105,6 +106,7 @@ class DosenController extends Controller
             'telepon'    => 'required',
             'email'      => 'required',
             'jabatan'    => 'required',
+            'status'     => 'required',
             'foto'       => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 

@@ -21,9 +21,18 @@
             </div>
           </div>
           <div class="form-group row">
+            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Tanggal Artikel</label>
+            <div class="col-sm-9">
+              <input type="date" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" id="exampleInputUsername2" placeholder="Tanggal Artikel" value="{{ $artikel->tanggal}}">
+              @error('tanggal')
+                  <div class="invalid-feedback">{{$message}}</div>
+              @enderror
+            </div>
+          </div>
+          <div class="form-group row">
             <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Isi</label>
             <div class="col-sm-9">
-              <textarea class="form-control @error('isi') is-invalid @enderror" name="isi" id="" rows="4">{{$artikel->isi}}</textarea>
+              <textarea class="form-control @error('isi') is-invalid @enderror" name="isi" id="isi" rows="5">{{$artikel->isi}}</textarea>
               @error('isi')
                   <div class="invalid-feedback">{{$message}}</div>
               @enderror

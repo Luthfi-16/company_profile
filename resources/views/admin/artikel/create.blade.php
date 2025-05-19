@@ -6,24 +6,33 @@
       <div class="card-body">
         <h4 class="card-title">Tambah Data</h4>
         <p class="card-description">
-          Untuk Menambah Data Fakultas
+          Untuk Menambah Data Artikel
         </p>
-        <form class="form-sample" role="form" action="{{ route('fakultas.store') }}" method="POST" enctype="multipart/form-data" class="forms-sample">
+        <form class="form-sample" role="form" action="{{ route('artikel.store') }}" method="POST" enctype="multipart/form-data" class="forms-sample">
           @csrf
           <div class="form-group row">
-            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nama Fakultas</label>
+            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Judul Artikel</label>
             <div class="col-sm-9">
-              <input type="text" name="nama_fakultas" class="form-control @error('nama_fakultas') is-invalid @enderror" id="exampleInputUsername2" placeholder="Nama Fakultas">
-            </div>
-            @error('nama_fakultas')
+              <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputUsername2" placeholder="Judul Artikel">
+              @error('judul')
                   <div class="invalid-feedback">{{$message}}</div>
-            @enderror
+              @enderror
+            </div>
           </div>
           <div class="form-group row">
-            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Deskripsi Fakultas</label>
+            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Tanggal Artikel</label>
             <div class="col-sm-9">
-              <textarea class="form-control @error('desk') is-invalid @enderror" name="desk" id="" rows="5" placeholder="Deskripsi Fakultas"></textarea>
-              @error('desk')
+              <input type="date" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" id="exampleInputUsername2" placeholder="Tanggal Artikel">
+              @error('tanggal')
+                  <div class="invalid-feedback">{{$message}}</div>
+              @enderror
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Isi Artikel</label>
+            <div class="col-sm-9">
+              <textarea class="form-control @error('isi') is-invalid @enderror" name="isi" id="isi" rows="5" placeholder="Isi Artikel"></textarea>
+              @error('isi')
                   <div class="invalid-feedback">{{$message}}</div>
               @enderror
             </div>
@@ -37,9 +46,9 @@
                   <span class="input-group-append">
                       <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                   </span>
-                  @error('foto')
-                      <div class="invalid-feedback">{{$message}}</div>
-                  @enderror
+              @error('foto')
+                  <div class="invalid-feedback">{{$message}}</div>
+              @enderror
               </div>
             </div>
           </div>
@@ -49,4 +58,5 @@
     </div>
   </div>
 </div>
+  
 @endsection

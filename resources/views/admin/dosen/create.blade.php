@@ -68,10 +68,17 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Status</label>
-                      <div class="col-sm-9">
-                        <input type="text" name="status" class="form-control" id="exampleInputConfirmPassword2" placeholder="Status">
-                      </div>
+                      <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Pilih Status</label>
+                        <div class="col-sm-9">
+                          <select class="form-control @error('status') is-invalid @enderror" name="status" id="exampleFormControlSelect1">
+                            <option value="">Pilih Status</option>
+                            <option value="Tetap">Tetap</option>
+                            <option value="Tidak Tetap">Tidak Tetap</option>
+                          </select>
+                          @error('status')
+                              <div class="invalid-feedback">{{$message}}</div>
+                          @enderror
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-info mr-2">Submit</button>
                   </form>

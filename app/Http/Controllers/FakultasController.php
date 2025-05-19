@@ -15,7 +15,7 @@ class FakultasController extends Controller
     public function index()
     {
         $fakultas = Fakultas::all();
-        return view('fakultas.index', compact('fakultas'));
+        return view('admin/fakultas.index', compact('fakultas'));
     }
 
     /**
@@ -25,7 +25,7 @@ class FakultasController extends Controller
      */
     public function create()
     {
-        return view('fakultas.create');
+        return view('admin/fakultas.create');
     }
 
     /**
@@ -69,7 +69,7 @@ class FakultasController extends Controller
     public function show($id)
     {
         $fakultas = Fakultas::findOrFail($id);
-        return view(('fakultas.show'), compact('fakultas'));
+        return view(('admin/fakultas.show'), compact('fakultas'));
 
     }
 
@@ -82,7 +82,7 @@ class FakultasController extends Controller
     public function edit($id)
     {
         $fakultas = Fakultas::findOrFail($id);
-        return view(('fakultas.edit'), compact('fakultas'));
+        return view(('admin/fakultas.edit'), compact('fakultas'));
     }
 
     /**

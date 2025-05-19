@@ -11,10 +11,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ProBootstrap:Enlight &mdash; Free Bootstrap Theme, Free Responsive Bootstrap Website Template</title>
+    <title>BINUS University</title>
     <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-    
+    <link rel="icon" href="{{ asset ('user//img/Logo_Binus_University.png')}}" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset ('user/css/styles-merged.css')}}">
     <link rel="stylesheet" href="{{ asset ('user/css/style.min.css')}}">
@@ -37,26 +37,7 @@
     <div class="probootstrap-page-wrapper">
       <!-- Fixed navbar -->
       
-      <div class="probootstrap-header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
-              <span><i class="icon-location2"></i>Brooklyn, NY 10036, United States</span>
-              <span><i class="icon-phone2"></i>+1-123-456-7890</span>
-              <span><i class="icon-mail"></i>info@probootstrap.com</span>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
-              <ul>
-                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                <li><a href="#"><i class="icon-instagram2"></i></a></li>
-                <li><a href="#"><i class="icon-youtube"></i></a></li>
-                <li><a href="#" class="probootstrap-search-icon js-probootstrap-search"><i class="icon-search"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+
       @include('layouts.components-user.header')
       @yield('content')
       @include('layouts.components-user.footer')

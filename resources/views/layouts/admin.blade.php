@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>BINUS Admin</title>
   <!-- base:css -->
-  <link rel="stylesheet" href="{{ asset ('admin/vendors/typicons/typicons.css')}}">
-  <link rel="stylesheet" href="{{ asset ('admin/vendors/css/vendor.bundle.base.css')}}">
+  <link rel="stylesheet" href="{{ asset ('assets/vendors/typicons/typicons.css')}}">
+  <link rel="stylesheet" href="{{ asset ('assets/vendors/css/vendor.bundle.base.css')}}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ asset ('admin/css/vertical-layout-light/style.css')}}">
+  <link rel="stylesheet" href="{{ asset ('assets/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset ('admin/images/favicon.png')}}" />
+  <link rel="icon" href="{{ asset ('user//img/Logo_Binus_University.png')}}" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
   @yield('style')
 </head>
@@ -214,20 +214,20 @@
   <!-- container-scroller -->
 
   <!-- base:js -->
-  <script src="{{ asset ('admin/vendors/js/vendor.bundle.base.js')}}"></script>
+  <script src="{{ asset ('assets/vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-  <script src="{{ asset ('admin/vendors/chart.js/Chart.min.js')}}"></script>
+  <script src="{{ asset ('assets/vendors/chart.js/Chart.min.js')}}"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="{{ asset ('admin/js/off-canvas.js')}}"></script>
-  <script src="{{ asset ('admin/js/hoverable-collapse.js')}}"></script>
-  <script src="{{ asset ('admin/js/template.js')}}"></script>
-  <script src="{{ asset ('admin/js/settings.js')}}"></script>
-  <script src="{{ asset ('admin/js/todolist.js')}}"></script>
+  <script src="{{ asset ('assets/js/off-canvas.js')}}"></script>
+  <script src="{{ asset ('assets/js/hoverable-collapse.js')}}"></script>
+  <script src="{{ asset ('assets/js/template.js')}}"></script>
+  <script src="{{ asset ('assets/js/settings.js')}}"></script>
+  <script src="{{ asset ('assets/js/todolist.js')}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="{{ asset ('admin/js/dashboard.js')}}"></script>
+  <script src="{{ asset ('assets/js/dashboard.js')}}"></script>
   <script>
   document.querySelector('.file-upload-browse').addEventListener('click', function () {
     const fileInput = this.closest('.form-group').querySelector('.file-upload-default');
@@ -239,6 +239,7 @@
     this.closest('.form-group').querySelector('.file-upload-info').value = fileName;
   });
 </script>
+
 
   @stack('scripts')
   <!-- End custom js for this page-->

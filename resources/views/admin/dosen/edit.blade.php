@@ -58,7 +58,7 @@
               <img src="{{ asset('storage/dosen/'.$dosen->foto) }}" alt="" style="width: 100px; height: 100px; margin-bottom: 5px;">
               <input type="file" name="foto" class="file-upload-default">
                   <div class="input-group col-xs-12">
-                      <input type="text" name="foto" class="form-control file-upload-info @error('foto') is-invalid @enderror" disabled placeholder="Unggah Foto">
+                      <input type="text" name="foto" value="{{ $dosen->foto }}" class="form-control file-upload-info @error('foto') is-invalid @enderror" disabled placeholder="Unggah Foto">
                   <span class="input-group-append">
                       <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                   </span>
@@ -69,14 +69,18 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Status</label>
-            <div class="col-sm-9">
-              <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" id="exampleInputConfirmPassword2" placeholder="Status" value="{{ $dosen->status}}">
-              @error('status')
-                    <div class="invalid-feedback">{{$message}}</div>
-              @enderror
+              <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Pilih Status</label>
+                <div class="col-sm-9">
+                  <select class="form-control @error('status') is-invalid @enderror" name="status" id="exampleFormControlSelect1">
+                    <option value="">Pilih Status</option>
+                    <option value="Tetap" {{$dosen->status == "Tetap"? 'selected':''}}>Tetap</option>
+                    <option value="Tidak Tetap" {{$dosen->status == "Tidak Tetap"? 'selected':''}}>Tidak Tetap</option>
+                  </select>
+                  @error('status')
+                      <div class="invalid-feedback">{{$message}}</div>
+                  @enderror
+                </div>
             </div>
-          </div>
           <button type="submit" class="btn btn-info mr-2">Submit</button>
         </form>
       </div>

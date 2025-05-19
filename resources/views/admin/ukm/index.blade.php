@@ -27,7 +27,7 @@
                 <tr>
                   <td>{{ $no++ }}</td>
                   <td>{{ $data->nama_ukm }}</td>
-                  <td>{{ $data->desk }}</td>
+                  <td>{{ Str::limit($data->desk, 20) }}</td>
                   <td><img src="{{ asset('storage/ukm/' . $data->foto) }}" style="border-radius: 0; width: 100px; height: 50px;"/></td>
                   <td><form action="{{ route('ukm.destroy', $data->id) }}" method="post">
                         @csrf

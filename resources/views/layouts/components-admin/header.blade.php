@@ -5,7 +5,7 @@
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
             <span style="font-size: 20px; font-weight: 700; color: #fefefe;">
               Binus <br>
-              Universitas
+              University
             </span>
         </div>
       </div>
@@ -13,7 +13,7 @@
         <ul class="navbar-nav mr-lg-2 col-lg-12">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{{ asset ('admin/images/faces/face17.jpg')}}" alt="profile"/>
+              <img src="{{ asset ('assets/images/faces/face17.jpg')}}" alt="profile"/>
               <span class="nav-profile-name">
                 {{ Auth::user()->name }}
               </span>

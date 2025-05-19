@@ -22,7 +22,7 @@
                 <div class="form-group row">
                     <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Deskripsi UKM</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control @error('desk') is-invalid @enderror" name="desk" id="" rows="5" placeholder="Deskripsi UKM"></textarea>
+                        <textarea class="form-control @error('desk') is-invalid @enderror" name="desk" id="ukm" rows="5" placeholder="Deskripsi UKM"></textarea>
                         @error('desk')
                             <div class="invalid-feedback">{{$message}}</div>
                         @enderror
