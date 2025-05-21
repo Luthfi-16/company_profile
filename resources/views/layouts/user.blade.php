@@ -45,6 +45,36 @@
     </div>
     <!-- END wrapper -->
     
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var carousels = document.querySelectorAll('.owl-carousel-fullwidth');
+    
+        carousels.forEach(function (carousel) {
+          var itemCount = parseInt(carousel.getAttribute('data-item-count')) || 0;
+    
+          $(carousel).owlCarousel({
+            items: 1,
+            loop: itemCount > 1,
+            margin: 20,
+            nav: false,
+            dots: true,
+            smartSpeed: 800,
+            autoHeight: true,
+            autoplay: itemCount > 1,
+            navText: [
+              "<i class='icon-keyboard_arrow_left owl-direction'></i>",
+              "<i class='icon-keyboard_arrow_right owl-direction'></i>"
+            ]
+          });
+    
+          // Tambahan opsional: pastikan tampil jika hanya 1 item
+          if (itemCount <= 1) {
+            carousel.classList.add('owl-loaded');
+          }
+        });
+      });
+    </script>
+    
 
     <script src="{{ asset ('user/js/scripts.min.js')}}"></script>
     <script src="{{ asset ('user/js/main.min.js')}}"></script>

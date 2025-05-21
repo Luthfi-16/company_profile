@@ -34,6 +34,9 @@ Route::get('artikel{id}', [FrontController::class, 'detailArtikel'])->name('deta
 Route::get('/dosen', [FrontController::class, 'Dosen']);
 Route::get('/fasilitas', [FrontController::class, 'Fasilitas']);
 Route::get('fasilitas{id}', [FrontController::class, 'detailFasilitas'])->name('detail_fasilitas');
+Route::get('/ukm', [FrontController::class, 'Ukm']);
+Route::get('ukm{id}', [FrontController::class, 'detailUkm'])->name('detail_ukm');
+
 // Route::resource('artikel', FrontController::class);
 // Route::resource('artikel{id}', FrontController::class);
 

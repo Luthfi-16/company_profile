@@ -20,11 +20,11 @@
         <li><a href="{{ url('dosen')}}">Dosen</a></li>
         <li><a href="{{ url('fakultas')}}">Fakultas</a></li>
         <li class="dropdown">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Halaman</a>
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Lainnya</a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('fasilitas')}}">Fasilitas</a></li>
             <li><a href="teachers.html">Prestasi</a></li>
-            <li><a href="teachers.html">UKM</a></li>
+            <li><a href="{{ url('ukm')}}">UKM</a></li>
           </ul>
         </li>
       </ul>

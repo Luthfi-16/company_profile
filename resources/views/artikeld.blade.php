@@ -5,6 +5,7 @@
       <div class="row">
         <div class="col-md-6 text-left section-heading probootstrap-animate">
           <h2>{{ $artikel->judul }}</h2>
+          <span class="probootstrap-date"><p><i class="icon-calendar"></i>{{ \Carbon\Carbon::parse($artikel->tanggal)->translatedFormat('d F Y') }}</p>
         </div>
       </div>
     </div>
