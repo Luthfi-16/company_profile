@@ -14,7 +14,7 @@ class UkmController extends Controller
      */
     public function index()
     {
-        $ukm = Ukm::all();
+        $ukm = Ukm::orderBy('id', 'desc')->get();
         return view('admin/ukm.index', compact('ukm'));
     }
 
@@ -99,7 +99,7 @@ class UkmController extends Controller
         $validated = $request->validate([
             'nama_ukm' => 'required',
             'desk'     => 'required',
-            'foto'     => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'foto'     => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $ukm           = Ukm::findOrFail($id);

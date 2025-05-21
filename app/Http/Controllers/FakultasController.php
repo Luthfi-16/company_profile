@@ -14,7 +14,7 @@ class FakultasController extends Controller
      */
     public function index()
     {
-        $fakultas = Fakultas::all();
+        $fakultas = Fakultas::orderBy('id', 'desc')->get();
         return view('admin/fakultas.index', compact('fakultas'));
     }
 
@@ -98,7 +98,7 @@ class FakultasController extends Controller
         $validated = $request->validate([
             'nama_fakultas' => 'required',
             'desk'          => 'required',
-            'foto'          => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'foto'          => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $fakultas                = Fakultas::findOrFail($id);

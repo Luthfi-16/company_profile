@@ -14,7 +14,7 @@ class PrestasiController extends Controller
      */
     public function index()
     {
-        $prestasi = Prestasi::All();
+        $prestasi = Prestasi::orderBy('id', 'desc')->get();
         return view('admin/prestasi.index', compact('prestasi'));
 
     }
@@ -101,7 +101,7 @@ class PrestasiController extends Controller
             'nama_prestasi'  => 'required',
             'jenis_prestasi' => 'required',
             'desk'           => 'required',
-            'foto'           => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $prestasi                 = Prestasi::findOrFail($id);

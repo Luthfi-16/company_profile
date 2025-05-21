@@ -14,7 +14,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
+        $artikel = Artikel::orderBy('id', 'desc')->get();
         return view('admin/artikel.index', compact('artikel'));
     }
 
@@ -99,7 +99,7 @@ class ArtikelController extends Controller
             'judul'   => 'required',
             'isi'     => 'required',
             'tanggal' => 'required|date',
-            'foto'    => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'foto'    => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $artikel          = Artikel::findOrFail($id);

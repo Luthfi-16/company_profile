@@ -27,6 +27,9 @@
             <li class="nav-item"> <a class="nav-link" href="{{route ('fasilitas.index')}}">Tabel Fasilitas</a></li>
             </ul>
             <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{route ('fotofasilitas.index')}}">Tabel Foto Fasilitas</a></li>
+            </ul>
+            <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="{{route ('prestasi.index')}}">Tabel Prestasi</a></li>
             </ul>
             <ul class="nav flex-column sub-menu">

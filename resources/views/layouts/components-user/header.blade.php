@@ -22,7 +22,7 @@
         <li class="dropdown">
           <a href="#" data-toggle="dropdown" class="dropdown-toggle">Halaman</a>
           <ul class="dropdown-menu">
-            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="{{ url('fasilitas')}}">Fasilitas</a></li>
             <li><a href="teachers.html">Prestasi</a></li>
             <li><a href="teachers.html">UKM</a></li>
           </ul>

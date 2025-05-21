@@ -14,7 +14,7 @@ class FasilitasController extends Controller
      */
     public function index()
     {
-        $fasilitas = Fasilitas::All();
+        $fasilitas = Fasilitas::orderBy('id', 'desc')->get();
         return view('admin/fasilitas.index', compact('fasilitas'));
     }
 
@@ -94,7 +94,7 @@ class FasilitasController extends Controller
 
         $validated = $request->validate([
             'nama_fasilitas' => 'required',
-            'foto'           => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $fasilitas                 = Fasilitas::findOrFail($id);

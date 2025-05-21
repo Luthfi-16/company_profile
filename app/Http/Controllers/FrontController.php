@@ -5,6 +5,7 @@ use App\Models\Artikel;
 use App\Models\Dosen;
 use App\Models\Fakultas;
 use App\Models\Fasilitas;
+use App\Models\FotoFasilitas;
 use App\Models\Ukm;
 
 class FrontController extends Controller
@@ -17,9 +18,9 @@ class FrontController extends Controller
     public function index()
     {
         $artikel   = Artikel::all();
-        $dosen     = Dosen::all();
+        $dosen     = Dosen::take(4)->get();
         $fakultas  = Fakultas::all();
-        $fasilitas = Fasilitas::all();
+        $fasilitas = Fasilitas::take(3)->get();
         $ukm       = Ukm::all();
 
         return view('welcome', compact('artikel', 'dosen', 'fakultas', 'fasilitas', 'ukm'));
@@ -30,7 +31,8 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function Fakultas(){
+    public function Fakultas()
+    {
         $fakultas = Fakultas::all();
         return view('fakultas', compact('fakultas'));
     }
@@ -42,7 +44,8 @@ class FrontController extends Controller
 
     }
 
-    public function Artikel(){
+    public function Artikel()
+    {
         $artikel = Artikel::all();
         return view('artikel', compact('artikel'));
     }
@@ -54,9 +57,37 @@ class FrontController extends Controller
 
     }
 
-    public function Dosen(){
+    public function Dosen()
+    {
         $dosen = Dosen::all();
         return view('dosen', compact('dosen'));
+    }
+
+    public function Fasilitas()
+    {
+        $fasilitas = Fasilitas::all();
+        return view('fasilitas', compact('fasilitas'));
+    }
+
+    public function detailFasilitas($id)
+    {
+        $fasilitas     = Fasilitas::findOrFail($id);
+        $fotofasilitas = FotoFasilitas::where('id_fasilitas', $id)->get();
+        return view(('fasilitasd'), compact('fasilitas', 'fotofasilitas'));
+
+    }
+
+    public function Ukm()
+    {
+        $ukm = ukm::all();
+        return view('ukm', compact('ukm'));
+    }
+
+    public function detailukm($id)
+    {
+        $ukm = ukm::findOrFail($id);
+        return view(('ukmd'), compact('ukm'));
+
     }
 
     /**

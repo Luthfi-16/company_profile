@@ -14,7 +14,7 @@ class DosenController extends Controller
      */
     public function index()
     {
-        $dosen = Dosen::all();
+        $dosen = Dosen::orderBy('id', 'desc')->get();
         return view('admin/dosen.index', compact('dosen'));
 
     }
@@ -107,7 +107,7 @@ class DosenController extends Controller
             'email'      => 'required',
             'jabatan'    => 'required',
             'status'     => 'required',
-            'foto'       => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'foto'       => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $dosen             = Dosen::findOrFail($id);

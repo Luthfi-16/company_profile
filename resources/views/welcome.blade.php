@@ -86,9 +86,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              
               <div class="tab-content">
-
                 <div id="featured-news" class="tab-pane fade in active">
                   <div class="row">
                     <div class="col-md-12">
@@ -141,7 +139,7 @@
           </div>
         </div>
       </section>
-
+      
       <section class="probootstrap-section probootstrap-bg-white probootstrap-border-top">
         <div class="container">
           <div class="row">
