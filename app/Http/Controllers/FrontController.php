@@ -6,6 +6,7 @@ use App\Models\Dosen;
 use App\Models\Fakultas;
 use App\Models\Fasilitas;
 use App\Models\FotoFasilitas;
+use App\Models\Prestasi;
 use App\Models\Ukm;
 
 class FrontController extends Controller
@@ -20,10 +21,10 @@ class FrontController extends Controller
         $artikel   = Artikel::all();
         $dosen     = Dosen::take(4)->get();
         $fakultas  = Fakultas::all();
-        $fasilitas = Fasilitas::take(3)->get();
-        $ukm       = Ukm::all();
+        $fasilitas = Fasilitas::orderBy('nama_fasilitas', 'asc')->take(3)->get();
+        $prestasi  = Prestasi::take(3)->get();
 
-        return view('welcome', compact('artikel', 'dosen', 'fakultas', 'fasilitas', 'ukm'));
+        return view('welcome', compact('artikel', 'dosen', 'fakultas', 'fasilitas', 'prestasi'));
     }
 
     /**
@@ -65,29 +66,35 @@ class FrontController extends Controller
 
     public function Fasilitas()
     {
-        $fasilitas = Fasilitas::all();
+        $fasilitas = Fasilitas::orderBy('nama_fasilitas', 'asc')->get();
         return view('fasilitas', compact('fasilitas'));
     }
 
     public function detailFasilitas($id)
     {
         $fasilitas     = Fasilitas::findOrFail($id);
-        $fotofasilitas = FotoFasilitas::where('id_fasilitas', $id)->get();
+        $fotofasilitas = FotoFasilitas::where('id_fasilitas', $fasilitas->id)->get();
         return view(('fasilitasd'), compact('fasilitas', 'fotofasilitas'));
 
     }
 
     public function Ukm()
     {
-        $ukm = ukm::all();
+        $ukm = Ukm::all();
         return view('ukm', compact('ukm'));
     }
 
-    public function detailukm($id)
+    public function detailUkm($id)
     {
-        $ukm = ukm::findOrFail($id);
+        $ukm = Ukm::findOrFail($id);
         return view(('ukmd'), compact('ukm'));
 
+    }
+
+    public function Prestasi()
+    {
+        $prestasi = Prestasi::all();
+        return view('prestasi', compact('prestasi'));
     }
 
     /**

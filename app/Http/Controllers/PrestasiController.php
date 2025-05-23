@@ -40,14 +40,12 @@ class PrestasiController extends Controller
     {
         $validated = $request->validate([
             'nama_prestasi'  => 'required',
-            'jenis_prestasi' => 'required',
             'desk'           => 'required',
             'foto'           => 'required|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $prestasi                 = new Prestasi();
         $prestasi->nama_prestasi  = $request->nama_prestasi;
-        $prestasi->jenis_prestasi = $request->jenis_prestasi;
         $prestasi->desk           = $request->desk;
 
         if ($request->hasFile('foto')) {
@@ -99,14 +97,12 @@ class PrestasiController extends Controller
     {
         $validated = $request->validate([
             'nama_prestasi'  => 'required',
-            'jenis_prestasi' => 'required',
             'desk'           => 'required',
             'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $prestasi                 = Prestasi::findOrFail($id);
         $prestasi->nama_prestasi  = $request->nama_prestasi;
-        $prestasi->jenis_prestasi = $request->jenis_prestasi;
         $prestasi->desk           = $request->desk;
 
         if ($request->hasFile('foto')) {

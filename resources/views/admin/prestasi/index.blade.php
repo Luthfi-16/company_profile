@@ -14,7 +14,6 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Prestasi</th>
-                            <th>Jenis Prestasi</th>
                             <th>Deskripsi Prestasi</th>
                             <th>Foto</th>
                             <th>Aksi</th>
@@ -28,9 +27,8 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->nama_prestasi }}</td>
-                            <td>{{ $data->jenis_prestasi }}</td>
                             <td>{{  Str::limit($data->desk, 20) }}</td>
-                            <td><img src="{{ asset('storage/prestasi/' . $data->foto) }}" style="border-radius: 0; width: 100px; height: 50px;"/></td>
+                            <td><img src="{{ asset('storage/prestasi/' . $data->foto) }}" style="border-radius: 0;"/></td>
                             <td><form action="{{ route('prestasi.destroy', $data->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')

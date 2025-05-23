@@ -120,21 +120,27 @@
                     <div class="col-md-12">
                       <div class="owl-carousel" id="owl2">
                         @foreach($fasilitas as $data)
+                        <a href="{{ route('detail_fasilitas', $data->id)}}">
                         <div class="item">
                           <div class="image-card">
                             <img src="{{ asset ('storage/fasilitas/'. $data->foto)}}" alt="Library 2">
                             <div class="image-title">{{ $data->nama_fasilitas }}</div>
                           </div>
                         </div>
+                        </a>
                         @endforeach
                         <!-- END item -->
                       </div>
                     </div>
                   </div>
+                   <!-- END row -->
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <p><a href="{{ url('fasilitas')}}" class="btn btn-warning">Lihat Semua Fasilitas</a></p>  
+                    </div>
+                  </div>
                 </div>
-
               </div>
-            
             </div>
           </div>
         </div>
@@ -207,7 +213,7 @@
         </div>
       </section>
       
-      <section class="probootstrap-section probootstrap-bg probootstrap-section-colored probootstrap-testimonial" style="background-image: url(img/slider_4.jpg);">
+      <section class="probootstrap-section probootstrap-bg probootstrap-section-colored probootstrap-testimonial" style="background-color: gray;">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
@@ -219,15 +225,23 @@
           <div class="row">
             <div class="col-md-12 probootstrap-animate">
               <div class="owl-carousel owl-carousel-testimony owl-carousel-fullwidth"  data-item-count="1">
+                @foreach($prestasi as $data)
                 <div class="item">
                   <div class="probootstrap-testimony-wrap text-center">
                     <figure>
-                      <img src="img/person_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+                      <img src="{{ asset ('storage/prestasi/' . $data->foto)}}" alt="Free Bootstrap Template by ProBootstrap.com">
                     </figure>
-                    <blockquote class="quote"><cite class="author"><span>Mike Fisher</span></cite></blockquote>
+                    <b style="color: black;"><span>{{ $data->nama_prestasi }}</span></b>
+                    <blockquote class="quote">{{ $data->desk }}</blockquote>
                   </div>
                 </div>
+                @endforeach
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p><a href="{{ url('prestasi')}}" class="btn btn-warning">Lihat Semua Prestasi</a></p>  
             </div>
           </div>
           <!-- END row -->

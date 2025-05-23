@@ -20,19 +20,6 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Pilih Jenis Prestasi</label>
-                <div class="col-sm-9">
-                    <select class="form-control @error('jenis_prestasi') is-invalid @enderror" name="jenis_prestasi" id="exampleFormControlSelect1">
-                    <option value="">Pilih Jenis Prestasi</option>
-                    <option value="Mahasiswa" {{$prestasi->jenis_prestasi == "Mahasiswa"? 'selected':''}}>Mahasiswa</option>
-                    <option value="Universitas" {{$prestasi->jenis_prestasi == "Universitas"? 'selected':''}}>Universitas</option>
-                    </select>
-                    @error('jenis_prestasi')
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @enderror
-                </div>
-            </div>
-            <div class="form-group row">
                 <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Deskripsi Prestasi</label>
                 <div class="col-sm-9">
                     <textarea class="form-control @error('desk') is-invalid @enderror" name="desk" id="" rows="5" placeholder="Deskripsi Prestasi">{{ $prestasi->desk }}</textarea>

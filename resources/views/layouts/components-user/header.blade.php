@@ -23,7 +23,7 @@
           <a href="#" data-toggle="dropdown" class="dropdown-toggle">Lainnya</a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('fasilitas')}}">Fasilitas</a></li>
-            <li><a href="teachers.html">Prestasi</a></li>
+            <li><a href="{{ url('prestasi')}}">Prestasi</a></li>
             <li><a href="{{ url('ukm')}}">UKM</a></li>
           </ul>
         </li>

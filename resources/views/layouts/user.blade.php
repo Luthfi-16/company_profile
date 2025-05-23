@@ -14,7 +14,7 @@
     <title>BINUS University</title>
     <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-    <link rel="icon" href="{{ asset ('user//img/Logo_Binus_University.png')}}" type="image/png">
+    <link rel="icon" href="{{ asset ('user/img/Logo_Binus_University.png')}}" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset ('user/css/styles-merged.css')}}">
     <link rel="stylesheet" href="{{ asset ('user/css/style.min.css')}}">
@@ -45,37 +45,6 @@
     </div>
     <!-- END wrapper -->
     
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var carousels = document.querySelectorAll('.owl-carousel-fullwidth');
-    
-        carousels.forEach(function (carousel) {
-          var itemCount = parseInt(carousel.getAttribute('data-item-count')) || 0;
-    
-          $(carousel).owlCarousel({
-            items: 1,
-            loop: itemCount > 1,
-            margin: 20,
-            nav: false,
-            dots: true,
-            smartSpeed: 800,
-            autoHeight: true,
-            autoplay: itemCount > 1,
-            navText: [
-              "<i class='icon-keyboard_arrow_left owl-direction'></i>",
-              "<i class='icon-keyboard_arrow_right owl-direction'></i>"
-            ]
-          });
-    
-          // Tambahan opsional: pastikan tampil jika hanya 1 item
-          if (itemCount <= 1) {
-            carousel.classList.add('owl-loaded');
-          }
-        });
-      });
-    </script>
-    
-
     <script src="{{ asset ('user/js/scripts.min.js')}}"></script>
     <script src="{{ asset ('user/js/main.min.js')}}"></script>
     <script src="{{ asset ('user/js/custom.js')}}"></script>

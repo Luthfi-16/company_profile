@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prestasi extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'nama_prestasi', 'jenis_prestasi', 'desk', 'foto'];
+    protected $fillable = ['id', 'nama_prestasi', 'desk', 'foto'];
     public $timestamp   = true;
 
     public function deleteImage()
